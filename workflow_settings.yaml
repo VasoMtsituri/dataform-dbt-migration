@@ -1,5 +1,5 @@
 defaultProject: project-6e4dc205-0d7d-44c6-975
-defaultLocation: us-central1
-defaultDataset: dataform
+defaultLocation: us
+defaultDataset: transactions
 defaultAssertionDataset: dataform_assertions
 dataformCoreVersion: 3.0.37
