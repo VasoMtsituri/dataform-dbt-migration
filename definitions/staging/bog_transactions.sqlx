@@ -1,0 +1,15 @@
+config {
+    type: "view",
+}
+
+select
+    transaction_date,
+    transaction_amount,
+    transaction_ccy,
+    commission,
+    commission_ccy,
+    settlement_amount,
+    settlement_ccy,
+    operation_type,
+    rrn
+from ${ref("bog")}

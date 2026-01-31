@@ -1,0 +1,9 @@
+config {
+    type: "table",
+}
+
+select
+  date(transaction_date) as transaction_date,
+  sum(settlement_amount) as total_settlement_amount
+from ${ref("bog_transactions")}
+group by transaction_date
