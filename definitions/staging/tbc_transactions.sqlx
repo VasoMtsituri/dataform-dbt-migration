@@ -5,10 +5,10 @@ config {
 select
     Date AS transaction_date,
     SAFE_CAST(SPLIT(Description, ',')[SAFE_OFFSET(3)] AS NUMERIC) AS transaction_amount,
-    SAFE_CAST("Paid In" AS NUMERIC) AS settlement_amount,
+    SAFE_CAST(`Paid In` AS NUMERIC) AS settlement_amount,
     SAFE_CAST(SPLIT(Description, ',')[SAFE_OFFSET(3)] AS NUMERIC) - SAFE_CAST("Paid In" AS NUMERIC) AS commission,
     CONCAT(TRIM(SPLIT(Description, ',')[SAFE_OFFSET(1)]), ' ', TRIM(SPLIT(Description, ',')[SAFE_OFFSET(2)])) AS operation_type,
-    "Transaction ID" AS rrn,
+    `Transaction ID` AS rrn,
     "TBC" AS source_bank
 from ${ref("tbc")}
-where "Op Code" = "MMS"
+where `Op Code` = "MMS"
