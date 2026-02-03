@@ -1,5 +1,12 @@
 config {
     type: "table",
+    assertions: {
+        uniqueKey: ["transaction_date"],
+        nonNull: ["transaction_date"],
+        rowConditions: [
+            "total_settlement_amount >= 0"
+        ]
+    }
 }
 
 select

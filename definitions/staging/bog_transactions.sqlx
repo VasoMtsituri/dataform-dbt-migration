@@ -1,5 +1,9 @@
 config {
     type: "view",
+    assertions: {
+        uniqueKey: ["rrn"],
+        nonNull: ["rrn", "transaction_date", "transaction_amount"]
+    }
 }
 
 select
