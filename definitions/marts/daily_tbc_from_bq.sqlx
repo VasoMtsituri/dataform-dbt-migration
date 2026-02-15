@@ -1,0 +1,16 @@
+config {
+    type: "table",
+    assertions: {
+        uniqueKey: ["transaction_date"],
+        nonNull: ["transaction_date"],
+        rowConditions: [
+            "total_settlement_amount >= 0"
+        ]
+    }
+}
+
+select
+  date(transaction_date) as transaction_date,
+  sum(settlement_amount) as total_settlement_amount
+from ${ref("tbc_transactions")}
+group by transaction_date

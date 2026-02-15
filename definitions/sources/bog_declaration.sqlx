@@ -2,5 +2,5 @@ config {
     type: "declaration",
     database: "project-6e4dc205-0d7d-44c6-975",
     schema: "transactions",
-    name: "bog_transactions",
+    name: "bog",
 }
